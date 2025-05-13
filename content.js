@@ -53,6 +53,8 @@ app.get('/analyze', async (req, res) => {
     let totalCount = 0;
     let countByKeyword = {};
     let countByYear = {};
+    let nodate=0;
+    let articles2024= []
 
     for (const entry of data) {
       const keyword = entry.keyword;
@@ -64,25 +66,39 @@ app.get('/analyze', async (req, res) => {
       for (const article of articles) {
         if (article.pagemap && article.pagemap.metatags) {
           const metatags = article.pagemap.metatags[0];
-          let date = metatags['article:published_time'] || metatags['og:published_time'] || metatags['og:updated_time'];
+          let date = metatags['article:published_time'] || metatags['og:published_time'] || metatags['og:updated_time'] || metatags['vr:published_time'] || metatags['article:update_time']||metatags['article:modified_time']|| metatags['publishdate'];
 
           if (date) {
             const yearMatch = date.match(/\d{4}/);
+            console.log(yearMatch)
             if (yearMatch) {
               const year = yearMatch[0];
+              console.log(year)
+              if(year==='2024'||year==='2025') {
+                articles2024.push(article)
+              }
               countByYear[year] = (countByYear[year] || 0) + 1;
             }
+            else {
+              nodate++
+            }
+          }
+          else {
+            nodate++
           }
         }
       }
+      await writeFile('results2024up.json', JSON.stringify(articles2024, null, 2), 'utf-8');
     }
 
     res.json({
       totalArticles: totalCount,
       articlesByKeyword: countByKeyword,
       articlesByYear: countByYear
+      
     });
-
+console.log(totalCount, countByYear)
+console.log(nodate)
   } catch (error) {
     console.error('שגיאה בניתוח הנתונים:', error);
     res.status(500).json({ error: 'שגיאה בניתוח הנתונים' });
