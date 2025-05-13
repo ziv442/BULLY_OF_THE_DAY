@@ -3,6 +3,8 @@ html,body{
     width: 100%;
     display: flex;
     overflow-x: hidden;
+    direction: rtl;
+    background-color: rgb(209, 215, 230)
 }
 
 .b1{
@@ -68,7 +70,8 @@ table{
     border-radius: 12px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     gap: 15px;
-    width: 100%;
+    width: 600px;
+    margin: 0 auto;
   }
   
   .search.bar a {
@@ -128,7 +131,7 @@ border-radius: 8px;
 padding: 20px;
 }
 .logo{
-    background-image: url("66.jpg");
+    background-image: url("logo.jpeg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -141,7 +144,7 @@ padding: 20px;
     left: 2%;
 }
 .logo1{
-    background-image: url("66.jpg");
+    background-image: url("logo.jpeg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
