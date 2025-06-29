@@ -100,7 +100,7 @@
               <canvas id="myChart1" style="width: 600px; height:450px;"></canvas>
             </div>
             <div id="graph2">
-              <div class="graph-title">אחוז הבריונות ברחבי הארץ</div>
+              <div class="graph-title">בריונות ברשת לפי גילאים</div>
               <canvas id="myChart2" style="width: 600px; height:500px;"></canvas>
             </div>
           </div>
@@ -130,25 +130,44 @@
           });
           
           // Bar chart (בריונות באיזורים בארץ)
-          const areas = ["צפון", "מרכז", "דרום", "ירושלים", "שפלה"];
-          const areaData = [12, 9, 15, 10, 13];
+          const areas = [10,11,12,13,14,15,16,17,18];
+          const areaData = [34,10,14,18,8,6,10,8,6];
           
-          new Chart("myChart2", {
-            type: "bar",
-            data: {
-              labels: areas,
-              datasets: [{
-                backgroundColor: ["red", "green", "blue", "orange", "purple"],
-                data: areaData
-              }]
-            },
-            options: {
-              legend: { display: false },
-              title: {
-                display: false
-              }
-            }
-          });
+
+new Chart("myChart2", {
+  type: "bar",
+  data: {
+    labels: areas,
+    datasets: [{
+      backgroundColor: Array(areas.length).fill("darkblue"),
+      data: areaData
+    }]
+  },
+  options: {
+    legend: { display: false },
+    title: { display: false },
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        },
+        scaleLabel: {
+          display: true,
+          labelString: "מקרי בריונות ברשת",
+          fontSize: 14
+        }
+      }],
+      xAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: "גיל",
+          fontSize: 14
+        }
+      }]
+    }
+  }
+});
+
               </script>
        
         
