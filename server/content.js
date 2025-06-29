@@ -3,9 +3,12 @@ import dotenv from 'dotenv';
 import { writeFile, readFile } from 'fs/promises';
 import { change, processArticles} from './artical.js';
 dotenv.config({ path: '../.env' });
-const cors = require('cors');
+import cors from 'cors';
 const allowedOrigins = ['https://bully-of-the-day.onrender.com']; // כתובת הפרונט ברנדר שלך
 
+const ageGroup = 'בני נוער';
+const app = express();
+const PORT = 3000;
 
 app.use(cors({
   origin: allowedOrigins,
@@ -29,10 +32,6 @@ const socialMediaArray = [
   'רשת', 'רשת חברתית', 'אינסטגרם', 'טיקטוק', 'פייסבוק',
   'וואטסאפ', 'בני נוער', 'נוער', 'תלמידים','רשתות חברתיות'
 ];
-
-const ageGroup = 'בני נוער';
-const app = express();
-const PORT = 3000;
 
 const API_KEY = process.env.API;
 const CSE_ID = process.env.CSE;
