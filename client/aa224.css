@@ -1,0 +1,160 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-color: rgba(209, 215, 230,0.658);
+}
+
+/* שומר מקום לניווט בראש */
+#main {
+    width: 100%;
+    height: 90%;
+    background-color: rgba(209, 215, 230,0.658);
+    margin-top: auto; /* גורם ל-main לרדת לתחתית */
+    display: flex;
+    flex-direction: column;
+}
+
+/* מרכז את סטטיסטיקות */
+#header {
+    width: 100%;
+    height: 15%; /* הגדלנו קצת את הגובה */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+#c {
+    background-color:  #1a049a ; 
+    padding: 5px;
+    width: 20%;
+    font-family: serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    font-size: 40px;
+    border-radius: 30px;
+    color: #fbf8f8;
+}
+#graphs {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 170px;
+    box-sizing: border-box;
+}
+
+#graph1, #graph2 {
+    width: 45%;
+    box-sizing: border-box;
+}
+
+.graph-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: serif;
+    background-color:  #1a049a;
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    border-radius: 30px;
+    margin-bottom: 10px;
+    opacity: 80%;
+}
+
+@media (max-width: 768px){
+    .a2-title{
+        grid-template-columns: auto;
+    }
+}
+.a2-title{
+    display: flex;
+    justify-content: flex-start; 
+    align-items: flex-start;
+    flex-direction: column;
+   font-family: poppins, sans-serif;
+   position: relative;
+  
+ }
+ .b3{
+    font-size: 78px;
+    font-weight: bold;
+    background-color: #bf1d20;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    font-family: 'Arial Black', sans-serif;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    text-align: left; /* יישור לשמאל */
+    color: #ffffff;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    
+
+}
+.logo{
+    background-image: url("66.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    position: absolute;
+    top: 0%;
+    border-radius: 50%;
+    left: 2%;
+}
+
+    .search.bar {
+        display: flex;
+        align-items: center;
+        background-color: #f5f5f5;
+        padding: 10px 20px;
+        border-radius: 12px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        gap: 15px;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+
+  
+  .search.bar a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 500;
+  }
+  
+  .search.bar a.active,
+  .search.bar a:hover {
+    background-color: #1a049a;
+    color: white;
+  }
+  
+  .search.bar input[type="text"] {
+    margin-left: auto;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  .search.bar input[type="text"]:focus {
+    border-color: #1a049a;
+  }
+
