@@ -3,6 +3,14 @@ import dotenv from 'dotenv';
 import { writeFile, readFile } from 'fs/promises';
 import { change, processArticles} from './artical.js';
 dotenv.config({ path: '../.env' });
+const cors = require('cors');
+const allowedOrigins = ['https://bully-of-the-day.onrender.com']; // כתובת הפרונט ברנדר שלך
+
+
+app.use(cors({
+  origin: allowedOrigins,
+}));
+
 
 const keywords = [
   'בריונות', 'השפלה', 'העלבות', 'הקנטות',
